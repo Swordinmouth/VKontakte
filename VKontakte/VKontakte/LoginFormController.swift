@@ -4,9 +4,9 @@
 import UIKit
 
 final class LoginFormController: UIViewController {
-    @IBOutlet var loginInputTextField: UITextField!
-    @IBOutlet var passwordInputTextField: UITextField!
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet private var loginInputTextField: UITextField!
+    @IBOutlet private var passwordInputTextField: UITextField!
+    @IBOutlet private var scrollView: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ final class LoginFormController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    @IBAction func enterButton(_ sender: Any) {
+    @IBAction private func enterButton(_ sender: Any) {
         // Получаем текст логина
         guard let login = loginInputTextField.text else { return }
         // Получаем текст-пароль
@@ -57,7 +57,7 @@ final class LoginFormController: UIViewController {
     }
 
     // Когда клавиатура появляется
-    @objc func keyboardWasShown(notification: Notification) {
+    @objc private func keyboardWasShown(notification: Notification) {
         // Получаем размер клавиатуры
         guard let info = notification.userInfo as NSDictionary? else { return }
         guard let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)?.cgRectValue.size
@@ -70,14 +70,14 @@ final class LoginFormController: UIViewController {
     }
 
     // Когда клавиатура исчезает
-    @objc func keyboardWillBeHiden(notification: Notification) {
+    @objc private func keyboardWillBeHiden(notification: Notification) {
         // Устанавливаем отступ внизу UIScrollView, равный 0
         let contentInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInsets
     }
 
     // Исчезновение клавиатуры при клике по пустому месту на экране и метод, который будет вызываться при клике.
-    @objc func hideKeyboard() {
+    @objc private func hideKeyboard() {
         scrollView?.endEditing(true)
     }
 }
