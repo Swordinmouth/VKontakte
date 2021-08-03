@@ -1,5 +1,5 @@
 // LoginFormController.swift
-// Copyright © Polina. All rights reserved.
+// Copyright © Valery. All rights reserved.
 
 import UIKit
 
