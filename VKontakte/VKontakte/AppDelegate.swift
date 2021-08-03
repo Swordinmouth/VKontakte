@@ -1,5 +1,5 @@
 // AppDelegate.swift
-// Copyright © Valery. All rights reserved.
+// Copyright © Polina. All rights reserved.
 
 import UIKit
 
