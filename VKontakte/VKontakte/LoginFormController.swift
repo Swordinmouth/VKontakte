@@ -26,20 +26,42 @@ final class LoginFormController: UIViewController {
         notificationsDisappear()
     }
 
-    // MARK: - IBActions
+    // MARK: - Methods
 
-    @IBAction private func enterButton(_ sender: Any) {
-        guard let login = loginInputTextField.text else { return }
-        guard let password = passwordInputTextField.text else { return }
-
-        if login == "admin", password == "123456" {
-            print("успешная авторизация")
-        } else {
-            print("неуспешная авторизация")
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "loginSegue" {
+            if checkLoginInfo() {
+                return true
+            } else {
+                showLoginError()
+                return false
+            }
         }
+        return true
     }
 
     // MARK: - Private Methods
+
+    private func checkLoginInfo() -> Bool {
+        guard let login = loginInputTextField.text,
+              let password = passwordInputTextField.text else { return false }
+
+        if login == "admin", password == "123456" {
+            print("успешная авторизация")
+            return true
+        } else {
+            print("неуспешная авторизация")
+            return false
+        }
+    }
+
+    private func showLoginError() {
+        let alert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+
+        present(alert, animated: true, completion: nil)
+    }
 
     private func hideGesture() {
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
