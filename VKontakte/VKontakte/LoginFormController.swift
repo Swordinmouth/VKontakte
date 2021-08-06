@@ -56,7 +56,7 @@ final class LoginFormController: UIViewController {
     }
 
     private func showLoginError() {
-        let alert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Ошибка!!!", message: "Неверный логин или пароль", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
 
