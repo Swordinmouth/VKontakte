@@ -16,13 +16,9 @@ final class MyGroupsController: UITableViewController {
 
     private let groupsCellID = "MyGroupsCell"
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - IBActions
 
-    @IBAction func addGroups(segue: UIStoryboardSegue) {
+    @IBAction private func addGroups(segue: UIStoryboardSegue) {
         if segue.identifier == "addGroup" {
             guard let searchGroupsController = segue.source as? SearchGroupsController else { return }
             if let indexPath = searchGroupsController.tableView.indexPathForSelectedRow {

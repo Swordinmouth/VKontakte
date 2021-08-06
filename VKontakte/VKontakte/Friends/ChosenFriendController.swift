@@ -18,11 +18,6 @@ final class ChosenFriendController: UICollectionViewController {
         1
     }
 
-//
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        1
-//    }
-
     override func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
