@@ -9,7 +9,7 @@ struct User {
 }
 
 /// Модель групп
-struct Group {
+struct Group: Equatable {
     var name: String
     var image: String
 }

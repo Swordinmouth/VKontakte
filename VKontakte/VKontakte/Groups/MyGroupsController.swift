@@ -23,8 +23,10 @@ final class MyGroupsController: UITableViewController {
             guard let searchGroupsController = segue.source as? SearchGroupsController else { return }
             if let indexPath = searchGroupsController.tableView.indexPathForSelectedRow {
                 let group = searchGroupsController.groups[indexPath.row]
-                groups.append(group)
-                tableView.reloadData()
+                if !groups.contains(group) {
+                    groups.append(group)
+                    tableView.reloadData()
+                }
             }
         }
     }
