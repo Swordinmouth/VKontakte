@@ -5,5 +5,6 @@ import UIKit
 
 final class FriendProfileCell: UICollectionViewCell {
     // MARK: - IBOutlest
+
     @IBOutlet var friendPhotoImageView: UIImageView!
 }
