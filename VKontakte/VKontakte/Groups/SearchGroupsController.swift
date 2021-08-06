@@ -10,7 +10,7 @@ final class SearchGroupsController: UITableViewController {
 
     // MARK: - Public Properties
 
-    var groups: [Group] = [
+    public var groups: [Group] = [
         Group(name: "Фильмы", image: "movies"),
         Group(name: "Поэзия", image: "poetry"),
         Group(name: "Спорт", image: "sport"),
@@ -28,10 +28,7 @@ final class SearchGroupsController: UITableViewController {
             .dequeueReusableCell(withIdentifier: groupsCellID, for: indexPath) as? SearchGroupsCell
         else { return UITableViewCell() }
 
-        let group = groups[indexPath.row]
-
-        cell.searchGroupsLabel.text = group.name
-        cell.searchGropusImageView.image = UIImage(named: group.image)
+        cell.fill(with: groups[indexPath.row])
 
         return cell
     }

@@ -41,10 +41,7 @@ final class MyGroupsController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: groupsCellID, for: indexPath) as? MyGroupsCell
         else { return UITableViewCell() }
 
-        let group = groups[indexPath.row]
-
-        cell.groupNameLabel.text = group.name
-        cell.groupImageView.image = UIImage(named: group.image)
+        cell.fill(with: groups[indexPath.row])
 
         return cell
     }

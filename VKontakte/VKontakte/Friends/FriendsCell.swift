@@ -6,6 +6,14 @@ import UIKit
 final class FriendsCell: UITableViewCell {
     // MARK: - IBOutlets
 
-    @IBOutlet var friendImageView: UIImageView!
-    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet private var friendImageView: UIImageView!
+    @IBOutlet private var nameLabel: UILabel!
+
+    // MARK: - Private Methods
+
+    public func fill(with friend: User) {
+        nameLabel.text = friend.name
+        guard let image = UIImage(named: friend.image) else { return }
+        friendImageView.image = image
+    }
 }

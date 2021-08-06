@@ -10,7 +10,7 @@ final class ChosenFriendController: UICollectionViewController {
 
     // MARK: - Public Properties
 
-    var imageName = String()
+    public var userAvatar: User?
 
     // MARK: UICollectionViewDataSource
 
@@ -23,10 +23,11 @@ final class ChosenFriendController: UICollectionViewController {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: "FriendProfileCell", for: indexPath) as? FriendProfileCell
+            .dequeueReusableCell(withReuseIdentifier: friendCellID, for: indexPath) as? FriendProfileCell
         else { return UICollectionViewCell() }
 
-        cell.friendPhotoImageView.image = UIImage(named: imageName)
+        guard let avatar = userAvatar else { fatalError() }
+        cell.fill(with: avatar)
 
         return cell
     }

@@ -4,9 +4,9 @@
 import UIKit
 
 final class FriendsController: UITableViewController {
-    // MARK: - Private Properties
+    // MARK: - Public Properties
 
-    private var friends: [User] = [
+    public var friends: [User] = [
         User(name: "Aang", image: "aang"),
         User(name: "Batman", image: "bats"),
         User(name: "Hipster", image: "dudeinscarf"),
@@ -15,6 +15,8 @@ final class FriendsController: UITableViewController {
         User(name: "Neytiri", image: "lol"),
         User(name: "Tengu", image: "tengu")
     ]
+
+    // MARK: - Private Properties
 
     private let friendsCellID = "FriendsCell"
 
@@ -28,10 +30,7 @@ final class FriendsController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: friendsCellID, for: indexPath) as? FriendsCell
         else { return UITableViewCell() }
 
-        let item = friends[indexPath.row]
-
-        cell.nameLabel.text = item.name
-        cell.friendImageView.image = UIImage(named: item.image)
+        cell.fill(with: friends[indexPath.row])
 
         return cell
     }
@@ -40,6 +39,6 @@ final class FriendsController: UITableViewController {
         guard segue.identifier == "FriendCollectionSegue",
               let vc = segue.destination as? ChosenFriendController,
               let selectedRow = tableView.indexPathForSelectedRow?.row else { return }
-        vc.imageName = friends[selectedRow].image
+        vc.userAvatar = friends[selectedRow]
     }
 }
