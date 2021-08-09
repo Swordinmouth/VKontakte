@@ -8,6 +8,7 @@ final class FriendsCell: UITableViewCell {
 
     @IBOutlet private var friendImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var avatarView: AvatarView!
 
     // MARK: - Private Methods
 
@@ -15,5 +16,6 @@ final class FriendsCell: UITableViewCell {
         nameLabel.text = friend.name
         guard let image = UIImage(named: friend.image) else { return }
         friendImageView.image = image
+        avatarView.imageView.image = image
     }
 }
