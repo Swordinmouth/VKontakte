@@ -32,3 +32,13 @@ final class ChosenFriendController: UICollectionViewController {
         return cell
     }
 }
+
+extension ChosenFriendController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        CGSize(width: 300, height: 212)
+    }
+}

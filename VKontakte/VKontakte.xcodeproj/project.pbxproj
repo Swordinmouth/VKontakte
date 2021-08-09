@@ -10,6 +10,8 @@
 		1A14CCAA26BD34C500AD232C /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14CCA926BD34C500AD232C /* FriendsCell.swift */; };
 		1A14CCAC26BD37E500AD232C /* FriendProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14CCAB26BD37E500AD232C /* FriendProfileCell.swift */; };
 		1A14CCAE26BD3ACB00AD232C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A14CCAD26BD3ACB00AD232C /* Model.swift */; };
+		1A5785DE26C06130009643CB /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5785DD26C06130009643CB /* AvatarView.swift */; };
+		1A5785E026C09E33009643CB /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5785DF26C09E33009643CB /* CustomControl.swift */; };
 		1A5F513E26B90D8000069A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5F513D26B90D8000069A86 /* AppDelegate.swift */; };
 		1A5F514026B90D8000069A86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5F513F26B90D8000069A86 /* SceneDelegate.swift */; };
 		1A5F514A26B90D8300069A86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5F514826B90D8300069A86 /* LaunchScreen.storyboard */; };
@@ -28,6 +30,8 @@
 		1A14CCA926BD34C500AD232C /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		1A14CCAB26BD37E500AD232C /* FriendProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileCell.swift; sourceTree = "<group>"; };
 		1A14CCAD26BD3ACB00AD232C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1A5785DD26C06130009643CB /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		1A5785DF26C09E33009643CB /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
 		1A5F513A26B90D8000069A86 /* VKontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5F513D26B90D8000069A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A5F513F26B90D8000069A86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A5785E126C09E43009643CB /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				1A5785DF26C09E33009643CB /* CustomControl.swift */,
+				1A5785DD26C06130009643CB /* AvatarView.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
 		1A5F513126B90D8000069A86 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +92,7 @@
 				1A5F516526B9922D00069A86 /* LoginFormController.swift */,
 				1AB092BF26BD81DB004CF9E0 /* Groups */,
 				1A5F518326BD336A00069A86 /* Friends */,
+				1A5785E126C09E43009643CB /* CustomElements */,
 				1A5F516326B9920000069A86 /* Main.storyboard */,
 				1A5F516726B9923C00069A86 /* Assets.xcassets */,
 				1A14CCAD26BD3ACB00AD232C /* Model.swift */,
@@ -225,6 +239,8 @@
 				1A5F516626B9922D00069A86 /* LoginFormController.swift in Sources */,
 				1A14CCAC26BD37E500AD232C /* FriendProfileCell.swift in Sources */,
 				1AB092BE26BD4EA0004CF9E0 /* ChosenFriendController.swift in Sources */,
+				1A5785E026C09E33009643CB /* CustomControl.swift in Sources */,
+				1A5785DE26C06130009643CB /* AvatarView.swift in Sources */,
 				1AB092C126BD8208004CF9E0 /* MyGroupsController.swift in Sources */,
 				1A14CCAA26BD34C500AD232C /* FriendsCell.swift in Sources */,
 				1A5F518526BD338800069A86 /* FriendsController.swift in Sources */,
